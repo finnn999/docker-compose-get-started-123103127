@@ -75,6 +75,7 @@ Menunjukkan proses testing persistensi data Redis:
 4. Mengakses kembali endpoint, di mana counter berlanjut ke angka 4 dan 5 (tidak reset ke 0 karena tersimpan pada volume `redis-data`).
 
 ![Step 5 Persistence](screenshots/step5_persistence.png)
+![Step 5 Browser View](screenshots/step5_browser_view.png)
 
 ### Screenshot Step 7: Inspect and Debug Running Stack
 Menunjukkan hasil perintah inspeksi konfigurasi dan debugging:
