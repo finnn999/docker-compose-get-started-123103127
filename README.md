@@ -61,3 +61,27 @@ Melakukan inspeksi konfigurasi dan troubleshooting container menggunakan perinta
    docker compose down
    ```
    *(Gunakan `docker compose down -v` jika ingin menghapus named volume)*
+
+
+---
+
+## Bukti Eksekusi (Screenshots)
+
+### Screenshot Step 5: Data Persistence with Named Volumes
+Menunjukkan proses testing persistensi data Redis:
+1. Menjalankan stack dan melakukan hit hingga hit counter mencapai 3.
+2. Mematikan stack dengan `docker compose down`.
+3. Menjalankan kembali dengan `docker compose up -d`.
+4. Mengakses kembali endpoint, di mana counter berlanjut ke angka 4 dan 5 (tidak reset ke 0 karena tersimpan pada volume `redis-data`).
+
+![Step 5 Persistence](screenshots/step5_persistence.png)
+![Step 5 Browser View](screenshots/step5_browser_view.png)
+
+### Screenshot Step 7: Inspect and Debug Running Stack
+Menunjukkan hasil perintah inspeksi konfigurasi dan debugging:
+- Validasi konfigurasi dengan `docker compose config`.
+- Pengecekan status container dengan `docker compose ps`.
+- Pengecekan konektivitas dari container web ke redis (`print(r.ping())` -> `True`).
+- Pengecekan nilai langsung dari database Redis via `redis-cli GET hits` -> `"5"`.
+
+![Step 7 Inspect and Debug](screenshots/step7_inspect_debug.png)
